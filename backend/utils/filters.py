@@ -36,12 +36,13 @@ class SearchFilters:
         return titles
 
     def string_query_search(self, query):
+        print("This is me here.")
         payload = {
                     "query": {
                         "query_string": {
                             "analyze_wildcard": True,
                             "query": query,
-                            "fields": ["title", "topic"]
+                            "fields": ["title", "topic","labels","url"]
                         }
                     },
                     "size": 10

@@ -16,7 +16,10 @@ services:
       retries: 6
       
   backend:
-    image: "dineshsonachalam/tech-courses-search-engine-backend:latest"
+    build:
+      context: .
+      dockerfile: backend.Dockerfile
+    # image: "dineshsonachalam/tech-courses-search-engine-backend:latest"
     environment:
       - PYTHONUNBUFFERED=1
     networks:
